@@ -39,6 +39,7 @@ android {
     buildFeatures{
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -52,7 +53,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //Dagger Hilt
-    val dhVersion = "2.44"
+    val dhVersion = "2.48.1"
     implementation("com.google.dagger:hilt-android:$dhVersion")
     kapt("com.google.dagger:hilt-android-compiler:$dhVersion")
 
