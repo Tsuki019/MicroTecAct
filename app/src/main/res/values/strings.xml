@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MicroTecAct</string>
+
+    <string name="text_button">Mostrar informacion</string>
+
+    <!--  Information Headers  -->
+    <string name="Habilities">Habilidades</string>
+
+</resources>
