@@ -5,10 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.prvt.microtecact.R
 import com.prvt.microtecact.databinding.FragmentHomeBinding
 import com.prvt.microtecact.databinding.FragmentInformationListBinding
+import com.prvt.microtecact.ui.viewmodel.InformationListViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 /**
  * Fragment de la vista en donde se muestra la informacion obtenida desde la Api
@@ -20,8 +29,11 @@ class InformationListFragment : Fragment() {
 
     private val binding get() =_binding!!
 
+    private val infoPokeViewModel : InformationListViewModel by activityViewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        infoPokeViewModel.loadInfoPoke()
     }
 
     override fun onCreateView(
@@ -35,6 +47,24 @@ class InformationListFragment : Fragment() {
             findNavController().popBackStack()
         }
 
+//        lifecycleScope.launch {
+//            delay(2000)
+//        }
+        lifecycleScope.launch {
+            infoPokeViewModel.isLoading.collectLatest {
+                if (!it){
+                    binding.text1.apply {
+                        text = if(infoPokeViewModel.loadError.value != ""){
+                            infoPokeViewModel.loadError.value
+                        }else{
+
+                            //Coloca la informacion al TextView de la segunda vista
+                            infoPokeViewModel.infoPokemon.value!!.toString()
+                        }
+                    }
+                }
+            }
+        }
         return binding.root
     }
 }
