@@ -1,8 +1,6 @@
 package com.prvt.microtecact.data.network
 
 import com.prvt.microtecact.data.models.Pokemon
-import com.prvt.microtecact.data.network.PokemonApi
-import com.prvt.microtecact.util.Constants.API_URL
 import com.prvt.microtecact.util.Resource
 import javax.inject.Inject
 

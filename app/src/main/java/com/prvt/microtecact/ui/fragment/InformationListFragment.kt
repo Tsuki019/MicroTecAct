@@ -1,21 +1,15 @@
 package com.prvt.microtecact.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import com.prvt.microtecact.R
-import com.prvt.microtecact.databinding.FragmentHomeBinding
 import com.prvt.microtecact.databinding.FragmentInformationListBinding
 import com.prvt.microtecact.ui.viewmodel.InformationListViewModel
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 

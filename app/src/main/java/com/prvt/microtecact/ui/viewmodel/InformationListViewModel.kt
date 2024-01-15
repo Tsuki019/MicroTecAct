@@ -6,11 +6,11 @@ import com.prvt.microtecact.data.models.Pokemon
 import com.prvt.microtecact.domain.usecases.GetPokemonInfoUseCase
 import com.prvt.microtecact.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import com.prvt.microtecact.ui.fragment.InformationListFragment
 
 /**
  * ViewModel para el almacenamiento y la entrega de la informacion para el fragmento [InformationListFragment]

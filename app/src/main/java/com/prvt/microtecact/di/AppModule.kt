@@ -1,6 +1,5 @@
 package com.prvt.microtecact.di
 
-import com.prvt.microtecact.data.network.GetPokemonRepository
 import com.prvt.microtecact.data.network.PokemonApi
 import com.prvt.microtecact.util.Constants.API_URL
 import dagger.Module
